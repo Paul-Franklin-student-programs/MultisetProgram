@@ -98,10 +98,8 @@ public class Bag<T>{
 
     /**
      * This method prints a set that consists of a collection
-     * of String values that represent all the unique type <T>
-     * elements in the bag
-     *
-     * @param bag
+     * of String values that represent all the unique Type&lt;T&gt;
+     * keys in the hashmap
      */
     public StringBuilder distinct(Bag<String> bag) {
         StringBuilder distinctString = null;
@@ -112,7 +110,6 @@ public class Bag<T>{
             for (String brand : stringArray)
                 distinctString.append(brand + " ; ");
             return distinctString;}
-
         else{System.out.println("Alert: This object of class Bag does not exist.");
             return null;}}}
 
