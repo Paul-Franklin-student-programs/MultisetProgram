@@ -55,14 +55,11 @@ public class TestingManager {
         assertEquals(true,finalBool);;
     }
 
-
 public static void main(String[] args) {
     Result result = JUnitCore.runClasses(TestingManager.class);
-
-    // Print test results
     for (Failure failure : result.getFailures()) {
         System.out.println(failure.toString());
     }
-
     System.out.println("All tests passed: " + result.wasSuccessful());
-}}
+}
+}
