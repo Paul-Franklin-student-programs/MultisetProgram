@@ -91,7 +91,13 @@ public class Bag<T>{
             print(firstBag);
             System.out.println("second bag:");
             print(secondBag);
-            treats.putAll(secondBag.treats);
+
+            for(T item : secondBag.treats.keySet() ){
+                int valueOfKeyInFirstBag = firstBag.treats.getOrDefault(item,0);
+                int valueOfKeyInSecondBag = secondBag.treats.getOrDefault(item, 0);
+                int valueOfKeyInMergedBag = valueOfKeyInFirstBag + valueOfKeyInSecondBag;
+                firstBag.treats.put(item, valueOfKeyInMergedBag);
+            }
             System.out.println("Merged bag:");
             print(firstBag);}
         else{System.out.println("Alert: One or more of these objects of class Bag do not exist.");}}

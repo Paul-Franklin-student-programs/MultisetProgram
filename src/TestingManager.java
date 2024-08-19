@@ -29,30 +29,30 @@ public class TestingManager {
         assertEquals(1, result);}
 
     @org.junit.Test
-    public void testRemove(){
+    public void shouldRemoveBrandFromBag(){
         testBag1.remove("Bubble Gum");
         int result = (int) testBag1.treats.getOrDefault("Bubble Gum",999);
         assertEquals(999,result);}
 
     @org.junit.Test
-    public void testSize(){
+    public void shouldReturnQuantityOfValuesInBag(){
         int result = testBag1.size();
         assertEquals(4, result);}
 
     @org.junit.Test
-    public void testMerge(){
+    public void shouldMergeContentsOfBags(){
         testBag1.merge(testBag1,testBag2);
         int result = (int) testBag1.treats.getOrDefault("Godiva Chocolate Bar",999);
         assertEquals(2,result);}
 
     @org.junit.Test
-    public void testDistinct(){
+    public void shouldIndicateIfBrandExistsInBag(){
         StringBuilder result = testBag2.distinct(testBag2);
         String convertedResult = result.toString();
-        boolean containsBrand1 = convertedResult.contains("Twix");
+        boolean containsBrand1 = convertedResult.contains("Gummy Bears");
         boolean containsBrand2 = convertedResult.contains("Baby Ruth");
         boolean finalBool = containsBrand1 && containsBrand2;
-        assertEquals(finalBool, true);
+        assertEquals(true,finalBool);;
     }
 
 
