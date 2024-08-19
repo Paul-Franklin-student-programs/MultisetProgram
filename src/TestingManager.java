@@ -14,11 +14,11 @@ public class TestingManager {
         testBag1 = new Bag();
         testBag2 = new Bag();
         testBag1.add("Bubble Gum");
-        testBag1.add("Peppermint Patti");
+        testBag1.add("Twix");
         testBag1.add("Godiva Chocolate Bar");
         testBag1.add("Spearmint Leaves");
         testBag2.add("Swedish Fish");
-        testBag2.add("Sour Patch Kids");
+        testBag2.add("Baby Ruth");
         testBag2.add("Godiva Chocolate Bar");
         testBag2.add("Gummy Bears");}
 
@@ -36,7 +36,7 @@ public class TestingManager {
     @org.junit.Test
     public void testSize(){
         int result = testBag1.size();
-        assertEquals(3, result);}
+        assertEquals(4, result);}
     @org.junit.Test
     public void testMerge(){
         testBag1.merge(testBag1,testBag2);
