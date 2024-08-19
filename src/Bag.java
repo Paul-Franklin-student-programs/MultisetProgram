@@ -7,32 +7,30 @@ import java.util.Set;
  * to interact with multiset instances
  */
 public class Bag<T>{
+
     /**
-     * this attribute is a hashmap declaration that assists the constructor in creating
-     * an instance's multiset
+     * hashmap declaration that assists constructor in creating
+     * multiset instances
      */
     public Map<T,Integer> treats;
 
     /**
-     * this is the constructor for the bag class that creates a new hashmap that is
-     * part of the new class object
+     * constructor for Bag class creates hashmap instances
      */
     public Bag(){
         treats = new HashMap<>();
     }
 
     /**
-     * this method adds a new element to the multiset
-     * @param brand
+     * adds new element to Bag object
      */
     public void add (T brand){
         if (treats == null) {
             treats = new HashMap<>();}
         treats.put(brand,treats.getOrDefault(brand,0)+1);}
+
     /**
-     * this method prints a string representation of all the type <T>
-     * elements in the class object's multiset, including all
-     * their keys and values
+     * prints String representation of Bag instance
      */
     public void print(Bag<T> bag){
         if(bag.treats != null){
@@ -45,8 +43,8 @@ public class Bag<T>{
         else{System.out.println("Alert: This bag does not exist");}}
 
     /**
-     * @return the quantity of elements in class object's multiset
-     * If hashmap "treats" is null, alert user via printed message
+     * Returns quantity of elements in "treats" hashmap.
+     * If "treats" is null, print alert for user
      */
     public int size() {
         if (treats != null){
@@ -58,9 +56,8 @@ public class Bag<T>{
 
     /**
      * This method removes a specified element from
-     * multiset if one or more of the type <T> argument exists
-     * within multiset.
-     * @param brand
+     * "treats" if one or more of the type T argument exists
+     * within Bag instance.
      */
     public void remove (T brand){
         int brandCount = treats.get(brand);
@@ -73,8 +70,7 @@ public class Bag<T>{
         else{System.out.println("Alert: this bag does not exist");}}
 
     /**
-     * This method determines if an element exists within the multiset
-     * @param brand
+     * Determines if certain Type &lt;T&gt; key exists within hashmap
      */
     public void contains(T brand) {
         if (treats != null){
@@ -86,8 +82,8 @@ public class Bag<T>{
         else{System.out.println("Alert: This bag does not exist");}}
 
     /**
-     * This method merges the type <T> contents of one bag with the
-     * type <T> contents of another bag
+     * Merges the elements of one Bag instance with another, thus
+     * uniting the key/value (Type&lt;T&gt;/Integer) pairs of both objects
      **/
     public void merge(Bag<T> firstBag, Bag<T> secondBag){
         if ((firstBag != null)&&(secondBag != null)){
